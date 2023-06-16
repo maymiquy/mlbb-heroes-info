@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class RoleController extends Controller
 {
@@ -34,6 +37,7 @@ class RoleController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'description' => 'required',
+            
         ]);
     
         Role::create($validatedData);

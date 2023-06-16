@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 
 class UserController extends Controller
@@ -34,11 +35,21 @@ class UserController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'required',
+            'password' => 'required',
             'role' => 'required',
         ]);
-    
-        User::create($validatedData);
-    
+
+        $name = $validatedData['name'];
+        $email = $validatedData['email'];
+        $password = Hash::make($validatedData['password']);
+        $role = $validatedData['role'];
+
+        $user = User::create([
+            'name' => $name,
+            'email' => $email,
+            'password' => $password,
+            'role' => $role,
+        ]);
         return redirect('/users')->with('success', 'User added successfully!');
     }
 

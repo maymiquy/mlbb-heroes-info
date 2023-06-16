@@ -28,24 +28,71 @@
         Form Input Data Role Hero
     </div>
     <div class="card-body">
-        <form action="{{ route('roles.store') }}" method="POST" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('users.store') }}">
             @csrf
-            <div class="mb-3">
-                <label for="name" class="form-label">Name:</label>
-                <input type="text" id="name" name="name" class="form-control">
+
+            <div class="row mb-3">
+                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+
+                <div class="col-md-6">
+                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
+                        value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                    @error('name')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email:</label>
-                <input type="email" id="email" name="email" class="form-control">
+
+            <div class="row mb-3">
+                <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+
+                <div class="col-md-6">
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                        name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                    @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
             </div>
-            <div>
-                <label for="role" class="form-label">Role:</label>
-                <select name="role" id="role" class="form-select">
-                    <option value="user">User</option>
-                    <option value="admin">Admin</option>
-                </select>
+
+            <div class="row mb-3">
+                <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+
+                <div class="col-md-6">
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
+                        name="password" required autocomplete="new-password">
+
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
             </div>
-            <button type="submit" class="btn btn-success">Add</button>
+
+            <div class="row mb-3">
+                <label for="role" class="col-md-4 col-form-label text-md-end">{{ __('role') }}</label>
+                <div class="col-md-6">
+                    <select name="role" id="role" class="form-select @error('role') is-invalid @enderror">
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-0">
+                <div class="col-md-6 offset-md-4">
+                    <button type="submit" class="btn btn-primary">
+                       Add
+                    </button>
+                </div>
+            </div>
         </form>
     </div>
 </div>
