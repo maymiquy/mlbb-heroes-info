@@ -3,6 +3,15 @@
 @section('content')
 <div class="container">
 
+    <div class="card-body">
+        @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
+
+        You are a User.
+    </div>
     <h1 class="mt-4">halaman User</h1>
     <div class="row">
         @foreach ($heroes as $hero)

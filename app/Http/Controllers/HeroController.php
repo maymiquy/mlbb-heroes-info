@@ -20,7 +20,7 @@ class HeroController extends Controller
     {
         $heroes = Hero::all();
         
-        return view('heroes.index',compact('heroes'));
+        return view('admin.heroes.index',compact('heroes'));
     }
 
     /**
@@ -31,7 +31,7 @@ class HeroController extends Controller
         $roles = Role::all();
         $difficulties = Difficulty::all();
         $specialties = Specialty::all();
-        return view('heroes.create', compact(('roles'),('difficulties'),('specialties')));
+        return view('admin.heroes.create', compact(('roles'),('difficulties'),('specialties')));
     }
 
     /**
@@ -75,7 +75,7 @@ class HeroController extends Controller
         $roles = Role::all();
         $specialties = Specialty::all();
         $difficulties = Difficulty::all();
-        return view('heroes.show',compact('hero', 'roles', 'specialties', 'difficulties'));
+        return view('admin.heroes.show',compact('hero', 'roles', 'specialties', 'difficulties'));
     }
 
     /**
@@ -86,7 +86,7 @@ class HeroController extends Controller
         $roles = Role::all();
         $specialties = Specialty::all();
         $difficulties = Difficulty::all();
-        return view('heroes.edit', compact('hero', 'roles', 'specialties', 'difficulties'));
+        return view('admin.heroes.edit', compact('hero', 'roles', 'specialties', 'difficulties'));
     }
 
     /**
