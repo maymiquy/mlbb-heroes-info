@@ -36,7 +36,9 @@ class HomeController extends Controller
      */
     public function admin()
     {
-        return view('admin/home');
+        $heroes = Hero::all();
+        
+        return view('admin/home', compact('heroes'));
     }
   
 }
