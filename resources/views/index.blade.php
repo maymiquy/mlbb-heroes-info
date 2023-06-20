@@ -26,7 +26,7 @@
                             {{ $hero->price }}
                         </div>
                         <div class="row m-4">
-                            <a href="#" class="btn btn-primary">Selengkapnya</a>
+                            <a href="#" class="btn btn-primary">Selengkapnya ...</a>
                             <hr>
                         </div>
                     </div>
