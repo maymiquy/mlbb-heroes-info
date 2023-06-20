@@ -3,11 +3,11 @@
 @section('content')
 <div class="container">
 
-    @if (Auth::user()->role === "admin")
+    {{-- @if (Auth::user()->role === "admin")
     <div class="card-body">
         Role: {{ Auth::user()->role }}
     </div>
-    @endif
+    @endif --}}
     <h1 class="mt-4">halaman User</h1>
     <div class="row">
         @foreach ($heroes as $hero)
