@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class RoleController extends Controller
 {
@@ -15,7 +18,7 @@ class RoleController extends Controller
     {
         $roles = Role::all();
         
-        return view('roles.index',compact('roles'));
+        return view('admin.roles.index',compact('roles'));
     }
 
     /**
@@ -23,7 +26,7 @@ class RoleController extends Controller
      */
     public function create(): View
     {
-        return view('roles.create');
+        return view('admin.roles.create');
     }
 
     /**
@@ -34,6 +37,7 @@ class RoleController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'description' => 'required',
+            
         ]);
     
         Role::create($validatedData);
@@ -46,7 +50,7 @@ class RoleController extends Controller
      */
     public function show(Role $role): View
     {
-        return view('roles.show', compact('role'));
+        return view('admin.roles.show', compact('role'));
     }
 
     /**
@@ -54,7 +58,7 @@ class RoleController extends Controller
      */
     public function edit(Role $role): View
     {
-        return view('roles.edit', compact('role'));
+        return view('admin.roles.edit', compact('role'));
     }
 
     /**

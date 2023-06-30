@@ -16,6 +16,7 @@
         <button class="btn btn-success" type="submit">Create Data</button>
     </a> --}}
 </div>
+<a href="{{ route('users.create') }}" class="btn btn-primary mb-3">Create User</a>
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>

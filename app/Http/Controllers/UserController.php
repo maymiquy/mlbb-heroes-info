@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 
 class UserController extends Controller
@@ -15,7 +16,7 @@ class UserController extends Controller
     {
         $users = User::all();
         
-        return view('users.index', compact('users'));
+        return view('admin.users.index', compact('users'));
     }
 
     /**
@@ -23,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        return view('admin.users.create');
     }
 
     /**
@@ -34,10 +35,21 @@ class UserController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'required',
+            'password' => 'required',
+            'role' => 'required',
         ]);
-    
-        User::create($validatedData);
-    
+
+        $name = $validatedData['name'];
+        $email = $validatedData['email'];
+        $password = Hash::make($validatedData['password']);
+        $role = $validatedData['role'];
+
+        $user = User::create([
+            'name' => $name,
+            'email' => $email,
+            'password' => $password,
+            'role' => $role,
+        ]);
         return redirect('/users')->with('success', 'User added successfully!');
     }
 
@@ -46,7 +58,7 @@ class UserController extends Controller
      */
     public function show(User $user): View
     {
-        return view('users.show', compact('user'));
+        return view('admin.users.show', compact('user'));
     }
 
     /**
@@ -54,7 +66,7 @@ class UserController extends Controller
      */
     public function edit(User $user): View
     {
-        return view('users.edit', compact('user'));
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
