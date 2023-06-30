@@ -17,6 +17,7 @@
                             alt="Card image cap">
                         <div class="card-block">
 
+
                             <hr>
                             <h4 class="card-title text-center mt-1 "><a href="#"
                                     class="text-decoration-none text-primary">
