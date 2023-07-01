@@ -7,16 +7,13 @@
 
                         <div class="footer-logo">
                             <img src="https://www.freepnglogos.com/uploads/logo-mobile-legend-png/logo-mobile-legend-waktu-yang-tepat-bermain-mobile-legend-14.png"
-                                alt="">
+                                alt="MLBB-Heroes">
                             <hr>
                         </div>
                         <ul class="footer-social">
                             <h5 class="mt-3">Follow Us</h5>
                             <li><a href="" target="_blank"><i class="fab fa-facebook"></i></a></li>
                             <li><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
-                            <li><a href="" target="_blank"><i class="fab fa-telegram"></i></a></li>
                             <li><a href="" target="_blank"><i class="fab fa-twitter"></i></a></li>
                         </ul>
                     </div>

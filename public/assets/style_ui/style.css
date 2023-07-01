@@ -106,7 +106,9 @@ footer {
     padding-top: 20px;
     margin-top: 20px;
 }
-footer li, footer a {
+
+footer li,
+footer a {
     font-size: 20px;
 }
 
