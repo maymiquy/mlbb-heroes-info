@@ -1,6 +1,7 @@
     <nav class="navbar navbar-expand-lg sticky-top px-5 border-black shadow" id="navbar">
         <a class="navbar-brand" href="#">
-            <img id="MLBB-Heroes" src="{{ asset('/assets/img/logo-mlbb.png') }}" alt="MLBB-Heroes" draggable="false" />
+            <img id="MLBB-Heroes" src="{{ asset('/assets/img/logo-nmlbb.png') }}" alt="MLBB-Heroes" width="100"
+                class="img" draggable="false" />
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"

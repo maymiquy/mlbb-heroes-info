@@ -24,19 +24,19 @@
     <link href="{{ asset('/assets/admin/assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets/admin/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets/admin/assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('/assets/style_ui/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('/assets/UI/style.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
 </head>
 
 <body>
     <div id="app">
-        @include('partials.navfro')
+        @include('partials.navbarUI')
+        @include('partials.heroUI')
 
-
-        <main class="py-4">
+        <main class="py-4 shadow-container">
             @yield('content')
         </main>
-        @include('partials.footfro')
+        @include('partials.footerUI')
     </div>
 
     <script src="{{ asset('/assets/admin/assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
@@ -48,6 +48,7 @@
     <script src="{{ asset('/assets/admin/assets/vendor/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('/assets/admin/assets/vendor/php-email-form/validate.js') }}"></script>
     <script src="{{ asset('/assets/admin/assets/js/main.js') }}"></script>
+    <script src="{{ asset('/assets/UI/scripts.js') }}"></script>
     <script src="{{ asset('/js/datatables-simple-demo.js') }}"></script>
 </body>
 
