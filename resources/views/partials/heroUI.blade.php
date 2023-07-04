@@ -1,4 +1,4 @@
-<div class="wrapper h-50">
+<div class="hero-wrapper h-50">
     <div class="news-item hero-item">
     </div>
     <div class="news-item standard-item">

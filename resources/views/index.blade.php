@@ -8,7 +8,11 @@
         Role: {{ Auth::user()->role }}
     </div>
     @endif --}}
-        <h1 class="mt-4">halaman User</h1>
+        <div class="produk-title text-center mx-auto p-1 wow fadeInUp mb-5 bg-dark">
+            <h2 class="text-white m-2">
+                PRODUK
+            </h2>
+        </div>
         <div class="row">
             @foreach ($heroes as $hero)
                 <div class="col-sm-3">
@@ -16,7 +20,6 @@
                         <img class="card-img-top img-fluid product-image" src="/assets/img/{{ $hero->poster }}"
                             alt="Card image cap">
                         <div class="card-block">
-
 
                             <hr>
                             <h4 class="card-title text-center mt-1 "><a href="#"

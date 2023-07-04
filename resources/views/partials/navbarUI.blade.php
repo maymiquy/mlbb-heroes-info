@@ -1,4 +1,4 @@
-    <nav class="navbar navbar-expand-lg sticky-top px-5 border-black shadow" id="navbar">
+    <nav class="navbar navbar-expand-lg sticky-top px-5 shadow" id="navbar">
         <a class="navbar-brand" href="#">
             <img id="MLBB-Heroes" src="{{ asset('/assets/img/logo-nmlbb.png') }}" alt="MLBB-Heroes" width="100"
                 class="img" draggable="false" />
