@@ -16,7 +16,7 @@ class DifficultyController extends Controller
     {
         $difficulties = Difficulty::all();
         
-        return view('difficulties.index',compact('difficulties'));
+        return view('admin.difficulties.index',compact('difficulties'));
     }
 
     /**
@@ -24,7 +24,7 @@ class DifficultyController extends Controller
      */
     public function create()
     {
-        return view('difficulties.create');
+        return view('admin.difficulties.create');
     }
 
     /**
@@ -34,14 +34,6 @@ class DifficultyController extends Controller
     {
         $difficulty = Difficulty::create($request->all());
         return redirect()->route('difficulties.index')->with('success', 'Difficulty created successfully.');
-        
-        // $validatedData = $request->validate([
-        //     'level' => 'required',
-        // ]);
-    
-        // Difficulty::create($validatedData);
-    
-        // return redirect('/difficulties')->with('success', 'Difficulty added successfully!');
     }
 
 
@@ -50,7 +42,7 @@ class DifficultyController extends Controller
      */
     public function show(Difficulty $difficulty): View
     {
-        return view('difficulties.show', compact('difficulty'));
+        return view('admin.difficulties.show', compact('difficulty'));
     }
 
     /**
@@ -58,7 +50,7 @@ class DifficultyController extends Controller
      */
     public function edit(Difficulty $difficulty): View
     {
-        return view('difficulties.edit', compact('difficulty'));
+        return view('admin.difficulties.edit', compact('difficulty'));
     }
 
 

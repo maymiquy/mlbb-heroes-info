@@ -24,7 +24,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    $heroes = Hero::latest()->paginate(5);
+    $heroes = Hero::all();
     
     return view('index',compact('heroes'));
 });

@@ -17,7 +17,7 @@ class FavoriteHeroController extends Controller
     {
         $favoriteheroes = FavoriteHero::all();
         
-        return view('favoriteheroes.index',compact('favoriteheroes'));
+        return view('admin.favoriteheroes.index',compact('favoriteheroes'));
     }
 
     /**
@@ -27,7 +27,7 @@ class FavoriteHeroController extends Controller
     {
         $users = User::all();
         $heroes = Hero::all();
-        return view('favoriteheroes.create', compact(('users'),('heroes')));
+        return view('admin.favoriteheroes.create', compact(('users'),('heroes')));
     }
 
     /**
@@ -55,7 +55,7 @@ class FavoriteHeroController extends Controller
     {
         $users = User::all();
         $heroes = Hero::all();
-        return view('favoriteheroes.show',compact('favoritehero', 'users', 'heroes'));
+        return view('admin.favoriteheroes.show',compact('favoritehero', 'users', 'heroes'));
     }
 
     /**
@@ -65,7 +65,7 @@ class FavoriteHeroController extends Controller
     {
         $users = User::all();
         $heroes = Hero::all();
-        return view('favoriteheroes.edit',compact('favoritehero', 'users', 'heroes'));
+        return view('admin.favoriteheroes.edit',compact('favoritehero', 'users', 'heroes'));
     }
 
     /**
