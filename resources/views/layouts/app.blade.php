@@ -26,6 +26,7 @@
     <link href="{{ asset('/assets/admin/assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets/UI/style.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="{{ asset('/css/mystyle.css') }}" rel="stylesheet" />
 </head>
 
 <body>
