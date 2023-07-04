@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="{{ asset('/css/mystyle.css') }}" rel="stylesheet" />
     <div class="container">
 
         {{-- @if (Auth::user()->role === 'admin')
@@ -44,6 +45,45 @@
                     </div>
                 </div>
             @endforeach
+        </div>
+        
+        <div class="wrapper">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+                @foreach ($heroes as $hero)
+                <div class="cols">
+                    <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front" style="background-image: url(/assets/img/{{ $hero->poster }}">
+                                <div class="inner">
+                                    <p>{{ $hero->name }}</p>
+                                    <span>Tap for details</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="inner">
+                                    <h4 class="card-title">
+                                    <p>{{ $hero->name }}</p></h4><hr>
+                                    <p class="card-text">Genre: {{  $hero->name }}</p>
+                                    <p class="card-text">Rating: {{  $hero->name }} &#11088;</p>
+                                    <p class="card-text">Tahun: {{  $hero->name }}</p>
+                                    {{-- <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button"
+                                                class="btn btn-sm btn-outline-secondary">{{ $movie->negara }}</button>
+                                            <button type="button"
+                                                class="btn btn-sm btn-outline-secondary">{{ $movie->genre->nama }}</button>
+                                        </div>
+                                        <small class="text-body-secondary">{{ $movie->rating }}/10</small>
+                                    </div> --}}
+                                    <hr class="text-dark">
+                                    <a href="/{{ $hero->id }}/detail" class="btn btn-lg btn-warning mt-4">Detail Hero</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
         </div>
     </div>
 @endsection
