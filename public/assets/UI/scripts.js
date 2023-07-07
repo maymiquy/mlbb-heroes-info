@@ -1,16 +1,16 @@
 window.addEventListener('scroll', function () {
-    let title = document.querySelector('.title');
-    let standardItems = document.querySelectorAll('.news-item.standard-item:nth-child(2)');
-    let standardItems2 = document.querySelectorAll('.news-item.standard-item:nth-child(3)');
+    let logo = document.querySelector('.logo');
+    let item = document.querySelectorAll('.news-item.standard-item:nth-child(2)');
+    let item2 = document.querySelectorAll('.news-item.standard-item:nth-child(3)');
     let scrollPosition = window.scrollY;
 
-    title.style.transform = 'translate(-50%, ' + scrollPosition * 0.65 + 'px)';
+    logo.style.transform = 'translate(-50%, ' + scrollPosition * 0.65 + 'px)';
 
-    standardItems.forEach(item => {
+    item.forEach(item => {
         item.style.transform = 'translateX(-' + scrollPosition * 0.35 + 'px)';
     });
 
-    standardItems2.forEach(item => {
+    item2.forEach(item => {
         item.style.transform = 'translateX(' + scrollPosition * 0.50 + 'px)';
     });
 

@@ -1,7 +1,7 @@
     <nav class="navbar navbar-expand-lg sticky-top px-5 shadow" id="navbar">
         <a class="navbar-brand" href="#">
             <img id="MLBB-Heroes" src="{{ asset('/assets/img/logo-nmlbb.png') }}" alt="MLBB-Heroes" width="100"
-                class="img" draggable="false" />
+                class="img-brand" draggable="false" />
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -12,16 +12,16 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link fw-bold text-white text-shadow" href="#home">Home</a>
+                    <a class="nav-link fw-bold text-gold text-shadow" href="#home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-bold text-white text-shadow" href="#produk">Heroes</a>
+                    <a class="nav-link fw-bold text-gold text-shadow" href="#produk">Heroes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-bold text-white text-shadow" href="#tentang">Guides</a>
+                    <a class="nav-link fw-bold text-gold text-shadow" href="#tentang">Guides</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-bold text-white text-shadow" href="#footer">Contact</a>
+                    <a class="nav-link fw-bold text-gold text-shadow" href="#footer">Contact</a>
                 </li>
             </ul>
 
@@ -49,8 +49,9 @@
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             @if (Auth::user()->role === 'admin')
-                                <a class="dropdown-item" href="{{ route('admin.home') }}">Dashboard Admin</a>
+                                <a class="admin" href="{{ route('admin.home') }}">Dashboard Admin</a>
                             @endif
+
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}

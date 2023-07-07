@@ -12635,8 +12635,21 @@ fieldset:disabled .btn {
 }
 
 .text-shadow {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.775);
 }
 
+.text-gold {
+    position: relative;
+    background: linear-gradient(160deg, #FFFBAC 60%, #cfc956 40%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gold:hover {
+    transform: translateY(-1px);
+    background: linear-gradient(160deg, #cfc956 40%, #FFFBAC 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 /*# sourceMappingURL=bootstrap.min.css.map */
