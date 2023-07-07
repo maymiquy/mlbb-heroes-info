@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -48,6 +47,7 @@ h1 {
 .front,
 .back {
     background-size: cover;
+    background-position: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     background-position: center;
@@ -67,10 +67,11 @@ h1 {
 }
 
 .back {
-    background: rgb(29,22,0);
-    background: -webkit-linear-gradient(180deg, rgba(29,22,0,1) 0%, rgba(43,48,53,1) 30%, rgba(206,220,231,1) 79%);
-    background: -o-linear-gradient(180deg, rgba(29,22,0,1) 0%, rgba(43,48,53,1) 30%, rgba(206,220,231,1) 79%);
-    background: linear-gradient(180deg, rgba(29,22,0,1) 0%, rgba(43,48,53,1) 30%, rgba(206,220,231,1) 79%);
+    background-image: url('../img/back-card.jpg');
+    background: rgb(29, 22, 0);
+    background: -webkit-linear-gradient(180deg, rgba(29, 22, 0, 1) 0%, rgba(43, 48, 53, 1) 30%, rgba(206, 220, 231, 1) 79%);
+    background: -o-linear-gradient(180deg, rgba(29, 22, 0, 1) 0%, rgba(43, 48, 53, 1) 30%, rgba(206, 220, 231, 1) 79%);
+    background: linear-gradient(180deg, rgba(29, 22, 0, 1) 0%, rgba(43, 48, 53, 1) 30%, rgba(206, 220, 231, 1) 79%);
 }
 
 .front:after {
@@ -191,4 +192,12 @@ h1 {
         width: 100%;
         margin: 0 0 2rem 0;
     }
+}
+
+.description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    font-size: 12px;
 }
