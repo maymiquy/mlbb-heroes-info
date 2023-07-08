@@ -27,23 +27,19 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row justify-content-center align-items-center vh-100">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Reset Password') }}</div>
-
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('password.update') }}">
-                            @csrf
-
-                            <input type="hidden" name="token" value="{{ $token }}">
-
-                            <div class="row mb-3">
-                                <label for="email"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                                <div class="col-md-6">
+    <section class="vh-100">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card shadow-2-strong" id="login_card">
+                        <div class="card-body p-5 text-center">
+                            <h3 class="mb-5" id="title_login">{{ __('Reset Password') }}</h3>
+                            <form method="POST" action="{{ route('password.update') }}">
+                                @csrf
+                                <input type="hidden" name="token" value="{{ $token }}">
+                                <div class="form-outline mb-4">
+                                    <label for="email" id="label_login"
+                                    class="form-label">{{ __('Email Address') }}</label>
                                     <input id="email" type="email"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
                                         value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
@@ -54,13 +50,9 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="password"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                                <div class="col-md-6">
+                                <div class="form-outline mb-4">
+                                    <label for="password" id="label_login"
+                                    class="form-label">{{ __('Password') }}</label>
                                     <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="new-password">
@@ -71,31 +63,22 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="password-confirm"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                                <div class="col-md-6">
+                                <div class="form-outline mb-4">
+                                    <label for="password-confirm" id="label_login"
+                                    class="form-label">{{ __('Confirm Password') }}</label>
                                     <input id="password-confirm" type="password" class="form-control"
-                                        name="password_confirmation" required autocomplete="new-password">
+                                    name="password_confirmation" required autocomplete="new-password">
                                 </div>
-                            </div>
-
-                            <div class="row mb-0">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Reset Password') }}
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
+                                <button type="submit" class="btn btn-primary" id="label_login">
+                                    {{ __('Reset Password') }}
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <script src="{{ asset('/assets/admin/assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('/assets/admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('/assets/admin/assets/vendor/tinymce/tinymce.min.js') }}"></script>
