@@ -663,3 +663,28 @@ footer a {
         font-family: monospace;
     }
 }
+
+#login_card {
+    border-radius: 7rem 2rem 7rem 2rem;
+    width: 400px;
+    background-color: #96d8ff; 
+}
+
+#regis_card {
+    border-radius: 7rem 2rem 7rem 2rem;
+    width: 400px;
+    height: 570px;
+    background-color: #96d8ff; 
+}
+
+#title_login {
+    color: goldenrod; 
+    font-weight:bold; 
+    text-shadow: 2px 2px rgb(6, 6, 158);
+}
+
+#label_login {
+    color: goldenrod; 
+    font-weight:bold; 
+    text-shadow: 1px 1px rgb(6, 6, 158);
+}
