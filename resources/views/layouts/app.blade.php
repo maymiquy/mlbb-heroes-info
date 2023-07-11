@@ -8,16 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'MLBB Heroes') }}</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
-
-
-    <!-- Scripts -->
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <link href="{{ asset('assets/admin/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets/admin/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
@@ -25,33 +20,53 @@
     <link href="{{ asset('/assets/admin/assets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets/admin/assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets/admin/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-    <link href="{{ asset('/assets/admin/assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets/UI/style.css') }}" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-    <link href="{{ asset('/css/mystyle.css') }}" rel="stylesheet" />
+    <link href="{{ asset('/assets/UI/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 </head>
 
-<body>
+<body id="home">
     <div id="app">
         @include('partials.navbarUI')
-        @include('partials.heroUI')
 
-        <main class="py-4 shadow-container">
+        <main class="main-content shadow-container">
             @yield('content')
         </main>
+        @include('auth.login')
+        @include('auth.register')
         @include('partials.footerUI')
     </div>
 
     <script src="{{ asset('/assets/admin/assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('/assets/admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('/assets/admin/assets/vendor/chart.js/chart.umd.js') }}"></script>
-    <script src="{{ asset('/assets/admin/assets/vendor/echarts/echarts.min.js') }}"></script>
-    <script src="{{ asset('/assets/admin/assets/vendor/quill/quill.min.js') }}"></script>
-    <script src="{{ asset('/assets/admin/assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
     <script src="{{ asset('/assets/admin/assets/vendor/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('/assets/admin/assets/js/main.js') }}"></script>
     <script src="{{ asset('/assets/UI/scripts.js') }}"></script>
-    <script src="{{ asset('/js/datatables-simple-demo.js') }}"></script>
+    <script src="{{ asset('/assets/UI/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('/js/app.js') }}"></script>
+
+    <script>
+        var swiper = new Swiper(".hSwiper1", {
+            effect: 'coverflow',
+            slidesPerView: 2,
+            spaceBetween: 5,
+            loop: true,
+            centeredSlides: true,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 400,
+                modifier: 1.5,
+                slideShadows: false,
+            },
+            navigation: {
+                nextEl: ".homeB .swiper-button-next",
+                prevEl: ".homeB .swiper-button-prev",
+            },
+            autoplay: {
+                delay: 3000,
+            },
+        });
+    </script>
 </body>
 
 </html>

@@ -70,6 +70,6 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'role' => "user",
         ]);
-        return redirect()->route('login');
+        return redirect()->route('home');
     }
 }

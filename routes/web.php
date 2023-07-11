@@ -25,51 +25,50 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     $heroes = Hero::all();
-    
-    return view('index',compact('heroes'));
+
+    return view('index', compact('heroes'));
 });
- 
 
 Auth::routes();
-  
+
 /*------------------------------------------
 --------------------------------------------
 All Normal Users Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:user'])->group(function () {
-  
+
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 });
-  
+
 /*------------------------------------------
 --------------------------------------------
 All Admin Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
-  
+
     Route::get('/admin/home', [HomeController::class, 'admin'])->name('admin.home');
 
     //HEROES!!
     Route::resource('/heroes', HeroController::class);
-    
+
+
     //ROLES!!
     Route::resource('/roles', RoleController::class);
-    
+
     //SPECIALTY!!
     Route::resource('/specialties', SpecialtyController::class);
-    
+
     //DIFFICULTY!!
     Route::resource('/difficulties', DifficultyController::class);
-    
+
     //FAVORITE HEROES!!
     Route::resource('/favoriteheroes', FavoriteHeroController::class);
 
     //USERS!!
     Route::resource('/users', UserController::class);
 });
-
 Route::get('/search', [HomeController::class, 'search'])->name('search');
 
 Route::get('detail/{hero}', [HomeController::class, 'detail'])->name('detail');

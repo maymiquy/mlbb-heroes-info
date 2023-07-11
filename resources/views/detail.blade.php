@@ -1,74 +1,39 @@
 
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Detail Hero</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="/"> Back</a>
+@extends('layouts.app')
+
+@section('content')
+    <div class="detail-hero py-5">
+        {{-- <div class="produk-title text-center mx-auto p-1 wow fadeInUp mt-2 mb-5 bg-dark">
+            <h2 class="text-white m-2">
+                Detail Produk
+            </h2>
+        </div> --}}
+        <div class="container">
+            <div class="container-detail row mt-3 py-5 px-3 rounded-3 shadow-xl">
+                <div class="col-md-5 px-5">
+                    <div class="img-fluid rounded-3 shadow-xl"
+                        style="background-image: url({{ asset('assets/img/' . $hero->poster) }})">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="main-description px-5 d-grid justify-content-evenly">
+                        <h2 class="bold my-3 text-white text-shadow">
+                            {{ $hero->name }}
+                        </h2>
+                        <div class="product-details my-4 text-shadow">
+                            <p class="description text-white fw-bolder fs-6">{{ $hero->description }}</p>
+                        </div>
+                        <div class="btn-group d-flex justify-content-between">
+                            <button type="button"
+                                class="btn btn-sm btn-outline-secondary bg-gold fw-bold">{{ $hero->role->name }}</button>
+                            <button type="button"
+                                class="btn btn-sm btn-outline-secondary bg-gold fw-bold">{{ $hero->weapon }}</button>
+                            <button type="button"
+                                class="btn btn-sm btn-outline-secondary bg-gold fw-bold">{{ $hero->specialty->name }}</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    
-    <form> 
-     
-         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Name:</strong>
-                    <input type="text" name="name" value="{{ $hero->name }}" class="form-control" placeholder="Name" disabled>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Weapon:</strong>
-                    <input type="text" name="weapon" value="{{ $hero->weapon }}" class="form-control" placeholder="Weapon" disabled>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Poster:</strong>
-                    <img src="/assets/img/{{ $hero->poster }}" width="300px">
-                    <input type="text" name="weapon" value="{{ $hero->poster }}" class="form-control" placeholder="Weapon" disabled>
-       
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Role:</strong>
-                    <select id="role_id" name="role_id" class="form-select" disabled>
-                        @foreach ($roles as $role)
-                            <option value="{{ $role->id }}" {{ $role->id == $hero->role_id ? 'selected' : '' }}>{{ $role->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Specialty:</strong>
-                    <select id="specialty_id" name="specialty_id" class="form-select" disabled>
-                        @foreach ($specialties as $specialty)
-                            <option value="{{ $specialty->id }}" {{ $specialty->id == $hero->specialty_id ? 'selected' : '' }}>{{ $specialty->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Difficulty:</strong>
-                    <select id="difficulty_id" name="difficulty_id" class="form-select" disabled>
-                        @foreach ($difficulties as $difficulty)
-                            <option value="{{ $difficulty->id }}" {{ $difficulty->id == $hero->difficulty_id ? 'selected' : '' }}>{{ $difficulty->level }}</option>
-                        @endforeach
-                    </select>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Description:</strong>
-                    <textarea class="form-control" style="height:150px" name="description" placeholder="Description" disabled>{{ $hero->description }}</textarea>
-                </div>
-            </div>
-        </div>
-     
-    </form>
+@endsection

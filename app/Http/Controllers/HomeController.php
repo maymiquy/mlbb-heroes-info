@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Role;
 use App\Models\Hero;
 use App\Models\Role;
 use App\Models\Specialty;
@@ -20,19 +21,19 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-  
+
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    { 
+    {
         $heroes = Hero::all();
-    
-        return view('index',compact('heroes'));
-    } 
-  
+
+        return view('index', compact('heroes'));
+    }
+
     /**
      * Show the application dashboard.
      *
@@ -41,10 +42,9 @@ class HomeController extends Controller
     public function admin()
     {
         $heroes = Hero::all();
-        
+
         return view('admin/home', compact('heroes'));
     }
-  
     public function search(Request $request)
     {
         $keyword = $request->search;
