@@ -138,6 +138,6 @@ class HeroController extends Controller
         $roles = Role::all();
         $specialties = Specialty::all();
         $difficulties = Difficulty::all();
-        return view('detail', compact('hero', 'roles', 'specialties', 'difficulties'));
+        return view('detail',compact('hero', 'roles', 'specialties', 'difficulties'));
     }
 }

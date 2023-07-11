@@ -69,5 +69,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     //USERS!!
     Route::resource('/users', UserController::class);
 });
+Route::get('/search', [HomeController::class, 'search'])->name('search');
 
+Route::get('detail/{hero}', [HomeController::class, 'detail'])->name('detail');
 Route::get('heroes.detail/{hero}', [HeroController::class, 'detail'])->name('heroes.detail');
+

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <section class="hero-wrapper h-50">
         <div class="news-item hero-item">
         </div>
