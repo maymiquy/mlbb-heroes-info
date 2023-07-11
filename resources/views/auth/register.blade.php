@@ -1,105 +1,54 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'MLBB Heroes') }}</title>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
-    <link href="{{ asset('assets/admin/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('/assets/admin/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('/assets/admin/assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('/assets/admin/assets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
-    <link href="{{ asset('/assets/admin/assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
-    <link href="{{ asset('/assets/admin/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-    <link href="{{ asset('/assets/UI/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('/assets/UI/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
-</head>
-
-<body>
-    <section class="vh-100">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                    <div class="card shadow-2-strong" id="regis_card">
-                        <div class="card-body p-5 text-center">
-                            <h3 class="mb-5" id="title_login">{{ __('Register') }}</h3>
-                            <form method="POST" action="{{ route('register') }}">
-                                @csrf
-                                <div class="form-outline mb-4">
-                                    <label for="name" id="label_login"
-                                        class="form-label">{{ __('Name') }}</label>
-                                    <input id="name" type="text"
-                                        class="form-control @error('name') is-invalid @enderror" name="name"
-                                        value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                    @error('name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label for="email" id="label_login"
-                                    class="form-label">{{ __('Email Address') }}</label>
-                                    <input id="password" type="password"
-                                        class="form-control @error('password') is-invalid @enderror" name="password"
-                                        required autocomplete="new-password">
-
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label for="password" id="label_login"
-                                    class="form-label">{{ __('Password') }}</label>
-                                    <input id="password" type="password"
-                                        class="form-control @error('password') is-invalid @enderror" name="password"
-                                        required autocomplete="new-password">
-
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label for="password-confirm" id="label_login"
-                                    class="form-label">{{ __('Confirm Password') }}</label>
-                                    <input id="password-confirm" type="password" class="form-control"
-                                        name="password_confirmation" required autocomplete="new-password">
-                                </div>
-                                <button type="submit" class="btn btn-primary" id="label_login">
-                                    {{ __('Register') }}
-                                </button>
-                            </form>
-                        </div>
+<div class="modal fade vh-100" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog d-flex justify-content-center align-items-center h-100 px-5">
+        <div class="modal-content shadow-xl">
+            <div class="modal-header">
+                <h5 class="modal-title fs-2 fw-bold" id="registerModalLabel">{{ __('Register') }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
+                    <div class="form-outline mb-4">
+                        <label for="name" class="form-label fw-bolder">{{ __('Name') }}</label>
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
+                            name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                        @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
-                </div>
+                    <div class="form-outline mb-4">
+                        <label for="email" class="form-label fw-bolder">{{ __('Email Address') }}</label>
+                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                            name="email" value="{{ old('email') }}" required autocomplete="email">
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label for="password" class="form-label fw-bolder">{{ __('Password') }}</label>
+                        <input id="password" type="password"
+                            class="form-control @error('password') is-invalid @enderror" name="password" required
+                            autocomplete="new-password">
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label for="password-confirm" class="form-label fw-bolder">{{ __('Confirm Password') }}</label>
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation"
+                            required autocomplete="new-password">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary btn-block">{{ __('Register') }}</button>
+                    </div>
+                </form>
             </div>
         </div>
-    </section>
-    <script src="{{ asset('/assets/admin/assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('/assets/admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('/assets/admin/assets/vendor/tinymce/tinymce.min.js') }}"></script>
-    <script src="{{ asset('/assets/admin/assets/vendor/php-email-form/validate.js') }}"></script>
-    <script src="{{ asset('/assets/admin/assets/js/main.js') }}"></script>
-    <script src="{{ asset('/assets/UI/scripts.js') }}"></script>
-    <script src="{{ asset('/assets/UI/swiper/swiper-bundle.min.js') }}"></script>
-    <script src="{{ asset('/js/app.js') }}"></script>
-</body>
-
-</html>
+    </div>
+</div>

@@ -11,7 +11,8 @@
                         </div>
                         <ul class="footer-social text-gold">
                             <h5 class="mt-3 text-gold text-shadow">Follow Us</h5>
-                            <li><a href="" target="_blank"><i class="fab fa-facebook text-gold fs-1"></i></a></li>
+                            <li><a href="" target="_blank"><i class="fab fa-facebook text-gold fs-1"></i></a>
+                            </li>
                             <li><a href="" target="_blank"><i class="fab fa-instagram text-gold fs-1"></i></a>
                             </li>
                             <li><a href="" target="_blank"><i class="fab fa-twitter text-gold fs-1"></i></a></li>

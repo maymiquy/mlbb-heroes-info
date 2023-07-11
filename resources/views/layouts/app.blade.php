@@ -13,10 +13,6 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
     <link href="{{ asset('assets/admin/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets/admin/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets/admin/assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
@@ -27,14 +23,15 @@
     <link href="{{ asset('/assets/UI/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 </head>
 
-<body>
+<body id="home">
     <div id="app">
         @include('partials.navbarUI')
 
         <main class="main-content shadow-container">
             @yield('content')
         </main>
-
+        @include('auth.login')
+        @include('auth.register')
         @include('partials.footerUI')
     </div>
 

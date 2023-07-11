@@ -16,8 +16,8 @@
         <img src="../assets/img/logo-nmlbb.png" alt="logo mlbb" class="logo w-25">
     </section>
 
-    <section class="homeA">
-        <div class="news-title justify-center mx-auto pt-2">
+    <section id="guides" class="homeA">
+        <div class="news-title justify-center mx-auto my-5">
             <h1 class="text-white text-shadow text-center fw-semibold">Guides & News</h1>
         </div>
 
@@ -134,7 +134,7 @@
         </div>
     </section>
 
-    <section class="container-heroes p-5">
+    <section id="hero" class="container-heroes p-5">
         <div class="hero-title text-center px-1 mx-auto mb-5">
             <h2 class="text-white text-shadow fw-bold">
                 List Hero
@@ -164,19 +164,20 @@
                                         <div class="d-flex justify-content-center align-items-center my-1">
                                             <div class="btn-group">
                                                 <button type="button"
-                                                    class="btn btn-sm btn-outline-secondary">{{ $hero->role->name }}</button>
+                                                    class="btn btn-sm btn-outline-secondary bg-gold fw-bold">{{ $hero->role->name }}</button>
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-center align-items-center">
                                             <div class="btn-group">
                                                 <button type="button"
-                                                    class="btn btn-sm btn-outline-secondary">{{ $hero->weapon }}</button>
+                                                    class="btn btn-sm btn-outline-secondary bg-gold fw-bolder">{{ $hero->weapon }}</button>
                                                 <button type="button"
-                                                    class="btn btn-sm btn-outline-secondary">{{ $hero->specialty->name }}</button>
+                                                    class="btn btn-sm btn-outline-secondary bg-gold fw-bolder">{{ $hero->specialty->name }}</button>
                                             </div>
                                         </div>
                                         <hr class="text-dark">
-                                        <a href="/{{ $hero->id }}/detail" class="btn btn-lg btn-warning mt-4">Detail
+                                        <a href="{{ route('heroes.detail', $hero->id) }}"
+                                            class="btn btn-lg btn-warning mt-4">Detail
                                             Hero
                                         </a>
                                     </div>
