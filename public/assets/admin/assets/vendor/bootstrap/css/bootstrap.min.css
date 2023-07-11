@@ -8064,6 +8064,10 @@ fieldset:disabled .btn {
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important
 }
 
+.shadow-xl {
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, .875)
+}
+
 .shadow-none {
     box-shadow: none !important
 }
@@ -12634,8 +12638,33 @@ fieldset:disabled .btn {
     }
 }
 
+
+
 .text-shadow {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.775);
+}
+
+.text-gold {
+    position: relative;
+    background: linear-gradient(160deg, #FFFBAC 60%, #cfc956 40%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gold:hover {
+    transform: translateY(-1px);
+    background: linear-gradient(160deg, #cfc956 40%, #FFFBAC 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bg-gold {
+    background: linear-gradient(160deg, #cfc956 40%, #FFFBAC 60%);
+}
+
+.bg-gold:hover {
+    background: linear-gradient(160deg, #FFFBAC 60%, #cfc956 40%);
+    color: #000;
 }
 
 

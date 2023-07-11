@@ -19,8 +19,8 @@ class HeroController extends Controller
     public function index(): View
     {
         $heroes = Hero::all();
-        
-        return view('admin.heroes.index',compact('heroes'));
+
+        return view('admin.heroes.index', compact('heroes'));
     }
 
     /**
@@ -31,7 +31,7 @@ class HeroController extends Controller
         $roles = Role::all();
         $difficulties = Difficulty::all();
         $specialties = Specialty::all();
-        return view('admin.heroes.create', compact(('roles'),('difficulties'),('specialties')));
+        return view('admin.heroes.create', compact(('roles'), ('difficulties'), ('specialties')));
     }
 
     /**
@@ -48,9 +48,9 @@ class HeroController extends Controller
             'difficulty_id' => 'required',
             'description' => 'required',
         ]);
-    
+
         $input = $request->all();
-    
+
         if ($image = $request->file('poster')) {
             $destinationPath = 'assets/img/';
             if (file_exists($destinationPath . $input['poster'])) {
@@ -60,11 +60,11 @@ class HeroController extends Controller
             $image->move($destinationPath, $profileImage);
             $input['poster'] = "$profileImage";
         }
-      
+
         Hero::create($input);
-       
+
         return redirect()->route('heroes.index')
-                        ->with('success','Hero created successfully.');
+            ->with('success', 'Hero created successfully.');
     }
 
     /**
@@ -75,7 +75,7 @@ class HeroController extends Controller
         $roles = Role::all();
         $specialties = Specialty::all();
         $difficulties = Difficulty::all();
-        return view('admin.heroes.show',compact('hero', 'roles', 'specialties', 'difficulties'));
+        return view('admin.heroes.show', compact('hero', 'roles', 'specialties', 'difficulties'));
     }
 
     /**
@@ -96,16 +96,16 @@ class HeroController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'poster' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'poster' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'weapon' => 'required',
             'role_id' => 'required',
             'specialty_id' => 'required',
             'difficulty_id' => 'required',
             'description' => 'required',
         ]);
-    
+
         $input = $request->all();
-    
+
         if ($image = $request->file('poster')) {
             $destinationPath = 'assets/img/';
             if (file_exists($destinationPath . $input['poster'])) {
@@ -115,13 +115,13 @@ class HeroController extends Controller
             $image->move($destinationPath, $profileImage);
             $input['poster'] = "$profileImage";
         }
-            
+
         $hero->update($input);
-      
+
         return redirect()->route('heroes.index')
-                        ->with('success','The hero has been updated successfully.');
+            ->with('success', 'The hero has been updated successfully.');
     }
-  
+
 
     /**
      * Remove the specified resource from storage.
@@ -129,7 +129,15 @@ class HeroController extends Controller
     public function destroy(Hero $hero)
     {
         $hero->delete();
-    
+
         return redirect('/heroes')->with('success', 'Hero has been deleted successfully!');
+    }
+
+    public function detail(Hero $hero): View
+    {
+        $roles = Role::all();
+        $specialties = Specialty::all();
+        $difficulties = Difficulty::all();
+        return view('detail', compact('hero', 'roles', 'specialties', 'difficulties'));
     }
 }
