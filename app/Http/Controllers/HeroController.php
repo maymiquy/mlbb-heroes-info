@@ -132,4 +132,13 @@ class HeroController extends Controller
     
         return redirect('/heroes')->with('success', 'Hero has been deleted successfully!');
     }
+
+    public function detail(Hero $hero): View
+    {
+        $roles = Role::all();
+        $specialties = Specialty::all();
+        $difficulties = Difficulty::all();
+        return view('detail',compact('hero', 'roles', 'specialties', 'difficulties'));
+    }
+
 }

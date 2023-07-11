@@ -1,10 +1,9 @@
 <!-- ======= Header ======= -->
-<header id="header" class="header fixed-top d-flex align-items-center">
+<header id="header" class="header fixed-top d-flex align-items-center navbar-admin text-white">
 
     <div class="d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center">
-            <img src="../../img/logo.png" alt="">
-            <span class="d-none d-lg-block">{{ config('app.name', 'Laravel') }}</span>
+            <span class="d-none d-lg-block text-white text-shadow">{{ config('app.name', 'Laravel') }}</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -28,7 +27,7 @@
             <li class="nav-item dropdown">
 
                 <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                    <i class="bi bi-bell"></i>
+                    <i class="bi bi-bell text-white"></i>
                     <span class="badge bg-primary badge-number">0</span>
                 </a><!-- End Notification Icon -->
 
@@ -55,7 +54,7 @@
             <li class="nav-item dropdown">
 
                 <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                    <i class="bi bi-chat-left-text"></i>
+                    <i class="bi bi-chat-left-text text-white"></i>
                     <span class="badge bg-success badge-number">0</span>
                 </a><!-- End Messages Icon -->
 
