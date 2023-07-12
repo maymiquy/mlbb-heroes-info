@@ -25,8 +25,12 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', function () { 
     $heroes = Hero::all(); 
-    $users = Auth::user(); 
-    $favhero = $users->favhero; 
+    $favhero = null;
+
+    if (Auth::check()) {
+        $user = Auth::user();
+        $favhero = $user->favhero;
+    }
  
     return view('index', compact('heroes', 'favhero')); 
 });

@@ -135,9 +135,10 @@ class HeroController extends Controller
 
     public function detail(Hero $hero): View
     {
+        $randomheroes = Hero::inRandomOrder()->limit(3)->get(); 
         $roles = Role::all();
         $specialties = Specialty::all();
         $difficulties = Difficulty::all();
-        return view('detail',compact('hero', 'roles', 'specialties', 'difficulties'));
+        return view('detail',compact('hero', 'roles', 'specialties', 'difficulties', 'randomheroes'));
     }
 }
