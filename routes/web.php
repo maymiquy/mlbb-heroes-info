@@ -23,10 +23,12 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    $heroes = Hero::all();
-
-    return view('index', compact('heroes'));
+Route::get('/', function () { 
+    $heroes = Hero::all(); 
+    $users = Auth::user(); 
+    $favhero = $users->favhero; 
+ 
+    return view('index', compact('heroes', 'favhero')); 
 });
 
 Auth::routes();
@@ -53,7 +55,6 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     //HEROES!!
     Route::resource('/heroes', HeroController::class);
 
-
     //ROLES!!
     Route::resource('/roles', RoleController::class);
 
@@ -70,7 +71,11 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::resource('/users', UserController::class);
 });
 Route::get('/search', [HomeController::class, 'search'])->name('search');
+Route::get('/listheroes', function () {
+    $heroes = Hero::all();
+    return view('listhero', compact('heroes'));
+});
 
-Route::get('detail/{hero}', [HomeController::class, 'detail'])->name('detail');
 Route::get('heroes.detail/{hero}', [HeroController::class, 'detail'])->name('heroes.detail');
+
 
