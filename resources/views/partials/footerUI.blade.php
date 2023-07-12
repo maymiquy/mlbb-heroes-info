@@ -56,13 +56,13 @@
                     </div>
                 </div>
             </div>
-            <hr>
-            <div class="footer-bottom text-gold">
+            <hr style="color: black;">
+            <div class="footer-bottom">
                 <div class="row">
                     <div class="col-sm-4">
-                        <a href="">Privacy policy</a>
+                        <a href="" class="text-dark text-shadow">Privacy policy</a>
                     </div>
-                    <div class="col-sm-8">
+                    <div class="col-sm-8 fw-bolder text-shadow">
                         <p>Copyright By MLBBHeroes @ 2023 All rights reserved</p>
                     </div>
                 </div>

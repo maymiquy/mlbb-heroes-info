@@ -24,11 +24,11 @@
     <link href="{{ asset('/assets/UI/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 </head>
 
-<body id="home">
+<body id="home" class="bg-black">
     <div id="app">
         @include('partials.navbarUI')
 
-        <main class="main-content shadow-container">
+        <main class="main-content bg-dark">
             @yield('content')
         </main>
         @include('auth.login')
@@ -56,6 +56,50 @@
                 stretch: 0,
                 depth: 400,
                 modifier: 1.5,
+                slideShadows: false,
+            },
+            navigation: {
+                nextEl: ".homeB .swiper-button-next",
+                prevEl: ".homeB .swiper-button-prev",
+            },
+            autoplay: {
+                delay: 3000,
+            },
+        });
+
+        var swiper = new Swiper(".hSwiper2", {
+            effect: 'coverflow',
+            slidesPerView: 3,
+            spaceBetween: 0,
+            loop: true,
+            centeredSlides: true,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 0,
+                modifier: 2,
+                slideShadows: false,
+            },
+            navigation: {
+                nextEl: ".homeB .swiper-button-next",
+                prevEl: ".homeB .swiper-button-prev",
+            },
+            autoplay: {
+                delay: 3000,
+            },
+        });
+
+        var swiper = new Swiper(".hSwiper3", {
+            effect: 'coverflow',
+            slidesPerView: 3,
+            spaceBetween: 0,
+            loop: true,
+            centeredSlides: true,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 0,
+                modifier: 2,
                 slideShadows: false,
             },
             navigation: {
