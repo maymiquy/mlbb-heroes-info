@@ -1,5 +1,5 @@
     <script src="https://kit.fontawesome.com/6b06d28ecb.js" crossorigin="anonymous"></script>
-    <footer>
+    <footer id="footer">
         <div class="container">
             <div class="footer-top">
                 <div class="row">

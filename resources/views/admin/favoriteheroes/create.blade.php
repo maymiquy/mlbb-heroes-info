@@ -22,7 +22,7 @@
     </ul>
 </div>
 @endif
-<div class="card mb-4">
+<div class="card mb-4 mt-3">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
         Form Input User's Favorite Heroes

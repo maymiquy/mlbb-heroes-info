@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Role;
 use App\Models\Hero;
-use App\Models\Role;
 use App\Models\Specialty;
 use App\Models\Difficulty;
 use Illuminate\View\View;

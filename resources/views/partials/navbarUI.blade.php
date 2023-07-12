@@ -13,16 +13,16 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link fw-bold text-gold text-shadow" href="">Home</a>
+                    <a class="nav-link fw-bold text-gold text-shadow" href="/#home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-bold text-gold text-shadow" href="#guides">Guides</a>
+                    <a class="nav-link fw-bold text-gold text-shadow" href="/#guides">Guides</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-bold text-gold text-shadow" href="#hero">Heroes</a>
+                    <a class="nav-link fw-bold text-gold text-shadow" href="/#hero">Heroes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-bold text-gold text-shadow" href="#footer">Contact</a>
+                    <a class="nav-link fw-bold text-gold text-shadow" href="/#footer">Contact</a>
                 </li>
             </ul>
 

@@ -81,7 +81,10 @@ class UserController extends Controller
             'email' => 'required',
             'role' => 'required|in:' . implode(',', [User::ROLE_ADMIN, User::ROLE_USER])
         ]);
-    
+        
+        
+        $user->name = $validatedData['name'];
+        $user->email = $validatedData['email'];
         $user->role = $validatedData['role'];
         $user->save();
     
