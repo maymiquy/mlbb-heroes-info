@@ -333,12 +333,10 @@ body {
     background-repeat: no-repeat;
 }
 
-/* .container-detail {
-    background-image: url(../img/bg-detail.webp);
-    background-position: unset;
-    background-size: cover;
-    background-repeat: no-repeat;
-} */
+.container-detail {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+}
 
 .description {
     overflow: hidden;
@@ -684,4 +682,59 @@ footer a {
 .favheroes-wrapper,
 .heroes-wrapper {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.2));
+}
+
+.aside .category {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+}
+
+.aside .category li {
+    position: relative;
+}
+
+.aside .category li:last-child {
+    border-bottom: none;
+}
+
+@media screen and (min-width: 1169px) {}
+
+.container-random {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    right: 30px;
+    top: 130px;
+}
+
+.back-recomend {
+    background-size: cover;
+    background-position: center;
+    box-shadow: 14px 9px 18px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-position: center;
+    -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    text-align: center;
+    min-height: 120px;
+    height: auto;
+    width: 120px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.aside {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.card-body {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
 }
