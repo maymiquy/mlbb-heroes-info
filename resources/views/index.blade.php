@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <section class="hero-wrapper h-50">
         <div class="news-item hero-item">
         </div>
@@ -19,7 +18,7 @@
 
     <section id="guides" class="homeA">
         <div class="news-title justify-center mx-auto my-5">
-            <h1 class="text-white text-shadow text-center fw-semibold">Guides & News</h1>
+            <h2 class="text-white text-shadow text-center fw-bold">Guides & News</h2>
         </div>
 
         <div class="container">
@@ -129,64 +128,150 @@
                         </div>
                     </div>
                 </div>
-                <div class="mainQh swiper-button-next"></div>
-                <div class="mainQh swiper-button-prev"></div>
+                {{-- <div class="mainQh swiper-button-next"></div>
+                <div class="mainQh swiper-button-prev"></div> --}}
             </div>
         </div>
     </section>
 
-    <section id="hero" class="container-heroes p-5">
-        <div class="hero-title text-center px-1 mx-auto mb-5">
-            <h2 class="text-white text-shadow fw-bold">
-                List Hero
-            </h2>
-        </div>
-        <div class="wrapper-card my-5">
-            <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 g-2">
-                @foreach ($heroes as $hero)
-                    <div class="cols">
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
-                            <div class="container-card">
-                                <div class="front" style="background-image: url(/assets/img/{{ $hero->poster }}">
-                                    <div class="inner">
-                                        <p>{{ $hero->name }}</p>
-                                        <span>Tap for details</span>
-                                    </div>
-                                </div>
-                                <div class="back">
-                                    <div class="inner">
-                                        <h4 class="card-title font-monospace">
-                                            {{ $hero->name }}
-                                        </h4>
-                                        <hr>
-                                        <p class="card-text fw-bolder description">
-                                            {{ $hero->description }}
-                                        </p>
-                                        <div class="d-flex justify-content-center align-items-center my-1">
-                                            <div class="btn-group">
-                                                <button type="button"
-                                                    class="btn btn-sm btn-outline-secondary bg-gold fw-bold">{{ $hero->role->name }}</button>
+    <section id="hero" class="container-heroes py-4 px-md-5 px-2">
+        <div class="heroes-wrapper my-5 py-3 px-md-5 rounded-3 shadow-xl">
+            <div class="hero-title text-center px-1 mx-auto mb-1">
+                <h2 class="text-white text-shadow fw-bold">
+                    Heroes
+                </h2>
+            </div>
+            <div class="row">
+                <div class="container col-md-9">
+                    <div class="homeB py-2">
+                        <div class="hSwiper2 a-fadeinB2">
+                            <div class="swiper-wrapper">
+                                @foreach ($heroes as $hero)
+                                    <div class="swiper-slide">
+                                        <div class="cols">
+                                            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="container-card">
+                                                    <div class="front"
+                                                        style="background-image: url('/assets/img/{{ $hero->poster }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                                                        <div class="inner">
+                                                            <p>{{ $hero->name }}</p>
+                                                            <span>Tap for details</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="back">
+                                                        <div class="inner">
+                                                            <h4 class="card-title font-monospace">
+                                                                {{ $hero->name }}
+                                                            </h4>
+                                                            <hr>
+                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                <div class="btn-group">
+                                                                    <button type="button"
+                                                                        class="btn btn-sm btn-outline-secondary bg-gold fw-bold">{{ $hero->role->name }}</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                <div class="btn-group">
+                                                                    <button type="button"
+                                                                        class="btn btn-sm btn-outline-secondary bg-gold fw-bolder">{{ $hero->specialty->name }}</button>
+                                                                </div>
+                                                            </div>
+                                                            <a href="{{ route('heroes.detail', $hero->id) }}"
+                                                                class="btn btn-warning mt-4">Detail
+                                                                Hero
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="d-flex justify-content-center align-items-center">
-                                            <div class="btn-group">
-                                                <button type="button"
-                                                    class="btn btn-sm btn-outline-secondary bg-gold fw-bolder">{{ $hero->weapon }}</button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-outline-secondary bg-gold fw-bolder">{{ $hero->specialty->name }}</button>
-                                            </div>
-                                        </div>
-                                        <hr class="text-dark">
-                                        <a href="{{ route('heroes.detail', $hero->id) }}"
-                                            class="btn btn-lg btn-warning mt-4">Detail
-                                            Hero
-                                        </a>
                                     </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
+                        {{-- <div class="mainQh swiper-button-next"></div>
+                    <div class="mainQh swiper-button-prev"></div> --}}
                     </div>
-                @endforeach
+                </div>
+                <div class="col-md-3 d-flex justify-content-start align-items-center">
+                    <div>
+                        <a href=""
+                            class="btn bg-gold fw-bold fs-5 font-monospace text-white text-shadow shadow-xl">
+                            View More
+                            <span class="bi bi-arrow-right fw-bold"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="favheroes-wrapper my-5 py-3 px-md-5 rounded-3 shadow-xl">
+            <div class="hero-title text-center px-1 mx-auto mb-1">
+                <h2 class="text-white text-shadow fw-bold">
+                    Favorit Heroes
+                </h2>
+            </div>
+            <div class="row">
+                <div class="container col-md-9 col-12">
+                    <div class="homeB py-2">
+                        <div class="hSwiper3 a-fadeinB2">
+                            <div class="swiper-wrapper">
+                                @foreach ($heroes as $hero)
+                                    <div class="swiper-slide">
+                                        <div class="cols">
+                                            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="container-card">
+                                                    <div class="front"
+                                                        style="background-image: url('/assets/img/{{ $hero->poster }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                                                        <div class="inner">
+                                                            <p>{{ $hero->name }}</p>
+                                                            <span>Tap for details</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="back">
+                                                        <div class="inner">
+                                                            <h4 class="card-title font-monospace">
+                                                                {{ $hero->name }}
+                                                            </h4>
+                                                            <hr>
+                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                <div class="btn-group">
+                                                                    <button type="button"
+                                                                        class="btn btn-sm btn-outline-secondary bg-gold fw-bold">{{ $hero->role->name }}</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                <div class="btn-group">
+                                                                    <button type="button"
+                                                                        class="btn btn-sm btn-outline-secondary bg-gold fw-bolder">{{ $hero->specialty->name }}</button>
+                                                                </div>
+                                                            </div>
+                                                            <a href="{{ route('heroes.detail', $hero->id) }}"
+                                                                class="btn btn-warning mt-4">Detail
+                                                                Hero
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        {{-- <div class="mainQh swiper-button-next"></div>
+                <div class="mainQh swiper-button-prev"></div> --}}
+                    </div>
+                </div>
+                <div class="col-md-3 col-12 d-flex justify-content-start align-items-center">
+                    <div>
+                        <a href=""
+                            class="btn bg-gold fw-bold fs-5 font-monospace text-white text-shadow shadow-xl">
+                            View More
+                            <span class="bi bi-arrow-right fw-bold"></span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

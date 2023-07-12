@@ -7,14 +7,11 @@
 </div>
 @endif
 <h1 class="mt-4">Users Data</h1>
-<div class="d-flex justify-content-between mb-4">
+<div class="d-flex justify-content-between">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
         <li class="breadcrumb-item active">Users</li>
     </ol>
-    {{-- <a href="/users/create">
-        <button class="btn btn-success" type="submit">Create Data</button>
-    </a> --}}
 </div>
 <a href="{{ route('users.create') }}" class="btn btn-primary mb-3">Create User</a>
 <div class="card mb-4">

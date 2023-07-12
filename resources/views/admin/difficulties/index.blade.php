@@ -7,7 +7,7 @@
 </div>
 @endif
 <h1 class="mt-4">Hero's Difficulty Data</h1>
-<div class="d-flex justify-content-between mb-4">
+<div class="d-flex justify-content-between">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
         <li class="breadcrumb-item active">Hero's Difficulty</li>

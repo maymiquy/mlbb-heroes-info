@@ -7,15 +7,15 @@
 </div>
 @endif
 <h1 class="mt-4">Favorite Heroes Data</h1>
-<div class="d-flex justify-content-between mb-4">
+<div class="d-flex justify-content-between">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
         <li class="breadcrumb-item active">Favorite Heroes</li>
     </ol>
-    <a href="/favoriteheroes/create">
-        <button class="btn btn-success" type="submit">Create Data</button>
-    </a>
 </div>
+<a href="/favoriteheroes/create" class="btn btn-primary mb-3">Create Data
+</a>
+
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
@@ -62,7 +62,7 @@
                         <form action="{{ route('favoriteheroes.destroy',$favoritehero->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-    
+
                             <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                         </form>
                     </td>
