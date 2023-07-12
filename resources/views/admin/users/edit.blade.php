@@ -23,38 +23,40 @@
 </div>
 @endif
 
-<form action="{{ route('users.update', $user->id) }}" method="POST" enctype="multipart/form-data">
-    @csrf
-    @method('PUT')
+<div class="card mb-4 mt-3">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        User: {{ $user->name }}
+    </div>
+    <div class="card-body">
+        <form action="{{ route('users.update', $user->id) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Name:</strong>
-                <input type="text" name="name" value="{{ $user->name }}" class="form-control">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" value="{{ $user->name }}">
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Email:</strong>
-                <input type="email" name="email" value="{{ $user->email }}" class="form-control">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" value="{{ $user->email }}">
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
+            <div class="mb-3">
                 <strong>Role:</strong>
                 <select name="role" class="form-select">
-                    <option value="{{ App\Models\User::ROLE_ADMIN }}" {{ $user->role === App\Models\User::ROLE_ADMIN ?
+                    <option value="{{ App\Models\User::ROLE_ADMIN }}" {{ $user->role ===
+                        App\Models\User::ROLE_ADMIN ?
                         'selected' : '' }}>Admin</option>
-                    <option value="{{ App\Models\User::ROLE_USER }}" {{ $user->role === App\Models\User::ROLE_USER ?
+                    <option value="{{ App\Models\User::ROLE_USER }}" {{ $user->role ===
+                        App\Models\User::ROLE_USER ?
                         'selected' : '' }}>User</option>
                 </select>
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
+                <button type="submit" class="form-control btn btn-primary">Submit</button>
+            </div>
     </div>
 
-</form>
+    </form>
+</div>
+</div>
 @endsection

@@ -1,15 +1,10 @@
-
 @extends('layouts.app')
 
 @section('content')
     <div class="detail-hero py-5">
-        {{-- <div class="produk-title text-center mx-auto p-1 wow fadeInUp mt-2 mb-5 bg-dark">
-            <h2 class="text-white m-2">
-                Detail Produk
-            </h2>
-        </div> --}}
+        <a href="/" class="btn btn-sm btn-primary m-3 text-sm "><i class="bi bi-arrow-left"></i>Back</a>
         <div class="container">
-            <div class="container-detail row mt-3 py-5 px-3 rounded-3 shadow-xl">
+            <div class="container-detail row py-5 px-3 rounded-3 shadow-xl">
                 <div class="col-md-5 px-5">
                     <div class="img-fluid rounded-3 shadow-xl"
                         style="background-image: url({{ asset('assets/img/' . $hero->poster) }})">

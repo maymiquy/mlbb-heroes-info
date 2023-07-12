@@ -1,23 +1,28 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="container">
-        <h1>Difficulty</h1>
+<div class="row">
+    <div class="col-lg-12 margin-tb">
+        <div class="pull-left">
+            <h2>Difficulty</h2>
+        </div>
+        <div class="pull-right">
+            <a class="btn btn-primary" href="{{ route('difficulties.index') }}"> Back</a>
+        </div>
+    </div>
+</div>
+<div class="card mb-4 mt-3">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Difficulty: {{ $difficulty->level }}
+    </div>
+    <div class="card-body">
         <form>
-            @csrf
-            @method('PUT')
             <div class="mb-3">
                 <label for="level" class="form-label">Level</label>
-                <select name="level" id="level" class="form-select" disabled>
-                    <option value="Easy" {{ $difficulty->level === 'Easy' ? 'selected' : '' }}>Easy</option>
-                    <option value="Normal" {{ $difficulty->level === 'Normal' ? 'selected' : '' }}>Normal</option>
-                    <option value="Hard" {{ $difficulty->level === 'Hard' ? 'selected' : '' }}>Hard</option>
-                    <option value="Extreme" {{ $difficulty->level === 'Extreme' ? 'selected' : '' }}>Extreme</option>
-                    <option value="Insane" {{ $difficulty->level === 'Insane' ? 'selected' : '' }}>Insane</option>
-                    <option value="Epical Glory" {{ $difficulty->level === 'Epical Glory' ? 'selected' : '' }}>Epical Glory</option>
-                </select>
+                <input type="text" class="form-control" name="level" value="{{ $difficulty->level }}" disabled>
             </div>
-            <a href="{{ route('difficulties.index') }}" class="btn btn-primary">Back</a>
         </form>
     </div>
+</div>
 @endsection

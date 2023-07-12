@@ -7,15 +7,15 @@
 </div>
 @endif
 <h1 class="mt-4">Roles Data</h1>
-<div class="d-flex justify-content-between mb-4">
+<div class="d-flex justify-content-between">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
         <li class="breadcrumb-item active">Roles</li>
     </ol>
-    <a href="/roles/create">
-        <button class="btn btn-success" type="submit">Create Data</button>
-    </a>
 </div>
+
+<a href="/roles/create" class="btn btn-primary mb-3">Create Role</a>
+
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
