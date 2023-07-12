@@ -61,4 +61,22 @@ class User extends Authenticatable
     //         get: fn ($value) =>  ["user", "admin"][$value],
     //     );
     // }
+    public function role() 
+    { 
+        return $this->belongsTo(Role::class, 'role_id'); 
+    } 
+ 
+    public function specialty() 
+    { 
+        return $this->belongsTo(Specialty::class, 'specialty_id'); 
+    } 
+ 
+    public function difficulty() 
+    { 
+        return $this->belongsTo(Difficulty::class, 'difficulty_id'); 
+    } 
+    public function favhero() 
+    { 
+        return $this->hasMany(FavoriteHero::class, 'users_id'); 
+    }
 }

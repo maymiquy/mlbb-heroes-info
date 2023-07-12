@@ -48,14 +48,15 @@ class HomeController extends Controller
     {
         $keyword = $request->search;
         $heroes = Hero::where('name', 'like', "%" . $keyword . "%")->get();
-        return view('index', compact('heroes'));
+        return view('listhero', compact('heroes'));
     }
     
-    public function detail(Hero $hero)
+    public function listheroes(Hero $hero)
     {
+        $heroes = Hero::all();
         $roles = Role::all();
         $specialties = Specialty::all();
         $difficulties = Difficulty::all();
-        return view('detail',compact('hero', 'roles', 'specialties', 'difficulties'));
+        return view('listhero',compact('hero', 'roles', 'specialties', 'difficulties'));
     }
 }
