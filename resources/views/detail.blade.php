@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="detail-hero py-5">
-    <a href="/" class="btn p-3 text-sm" style="margin-top: -10px;"><u><i class="bi bi-arrow-left"></i>Back</u></a>
+<div class="detail-hero py-5" style="margin-top:-50px">
+    <a href="/" class="btn bg-gold btn-secondary m-3 text-sm text-shadow text-white"><i
+            class="bi bi-arrow-left"></i>Back</a>
     <div class="container">
         <div class="container-detail row py-5 px-3 rounded-3 shadow-xl">
             <div class="col-md-5 px-5">

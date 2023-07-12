@@ -2,8 +2,8 @@
 @extends('layouts.app')
 
 @section('content')
-<a href="/" class="btn btn-sm btn-primary m-3 text-sm "><i class="bi bi-arrow-left"></i>Back</a>
-<section id="hero" class="container-heroes p-5">
+<a href="/" class="btn bg-gold btn-secondary m-3 text-sm text-shadow text-white"><i class="bi bi-arrow-left"></i>Back</a>
+<section id="hero" class="container-heroes p-5" style="margin-top:-70px">
     <div class="hero-title text-center px-1 mx-auto mb-5">
         <h2 class="text-white text-shadow fw-bold">
             List Hero
