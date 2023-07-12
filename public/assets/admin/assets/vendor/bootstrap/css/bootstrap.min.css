@@ -12638,10 +12638,8 @@ fieldset:disabled .btn {
     }
 }
 
-
-
 .text-shadow {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.775);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.775);
 }
 
 .text-gold {
@@ -12664,7 +12662,7 @@ fieldset:disabled .btn {
 
 .bg-gold:hover {
     background: linear-gradient(160deg, #FFFBAC 60%, #cfc956 40%);
-    color: #0000;
+    color: black;
 }
 
 
